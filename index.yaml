@@ -1,0 +1,29 @@
+apiVersion: v1
+entries:
+  open-k0rdent-ui:
+  - annotations:
+      category: Management
+    apiVersion: v2
+    appVersion: latest
+    created: "2025-07-04T11:41:06.477888503Z"
+    description: A Helm chart for Open K0rdent UI - Web interface for Mirantis k0rdent
+      cluster management
+    digest: 00f85ceec4acff9f1649a4bb007945ea33a9782464fb5cda8269992f1acfd72c
+    home: https://github.com/mirantis-field/open-k0rdent-ui
+    keywords:
+    - kubernetes
+    - cluster-management
+    - ui
+    - k0rdent
+    - mirantis
+    maintainers:
+    - email: field-team@mirantis.com
+      name: Mirantis Field Team
+    name: open-k0rdent-ui
+    sources:
+    - https://github.com/mirantis-field/open-k0rdent-ui
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/open-k0rdent-ui-0.1.1/open-k0rdent-ui-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-07-04T11:41:06.477894013Z"
