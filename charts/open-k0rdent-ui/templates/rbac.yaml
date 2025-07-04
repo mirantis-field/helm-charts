@@ -1,0 +1,58 @@
+{{- if .Values.rbac.create -}}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "open-k0rdent-ui.fullname" . }}
+  labels:
+    {{- include "open-k0rdent-ui.labels" . | nindent 4 }}
+rules:
+- apiGroups: [""]
+  resources: ["namespaces", "services", "configmaps"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "list", "watch"]
+  # No namespace restriction at this level (cluster role)
+- apiGroups: ["k0rdent.mirantis.com"]
+  resources: ["clusters", "clustertemplates", "services", "servicetemplates", "multiclusterservices", "clusterdeployments", "accessmanagements", "clustertemplatechains", "credentials", "managementbackups", "managements", "providertemplates", "releases", "servicetemplatechains"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  verbs: ["create"]
+{{- with .Values.rbac.clusterRole.customRules }}
+{{- toYaml . | nindent 0 }}
+{{- end }}
+---
+# Add a specific role binding for kcm-system secrets
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "open-k0rdent-ui.fullname" . }}-kcm-system-secrets
+  namespace: kcm-system
+  labels:
+    {{- include "open-k0rdent-ui.labels" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "open-k0rdent-ui.serviceAccountName" . }}
+  namespace: {{ .Values.namespace.name }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "open-k0rdent-ui.fullname" . }}
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "open-k0rdent-ui.fullname" . }}
+  labels:
+    {{- include "open-k0rdent-ui.labels" . | nindent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "open-k0rdent-ui.serviceAccountName" . }}
+  namespace: {{ .Values.namespace.name }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "open-k0rdent-ui.fullname" . }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }} 
