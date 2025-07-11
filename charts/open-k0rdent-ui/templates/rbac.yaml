@@ -32,6 +32,10 @@ rules:
 - apiGroups: ["k0rdent.mirantis.com"]
   resources: ["clusterdeployments", "clustertemplates", "clustertemplatechains", "servicetemplates", "servicetemplatechains", "multiclusterservices", "credentials", "managements", "managementbackups", "providertemplates", "releases", "accessmanagements"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+# Access to cluster-scoped MultiClusterServices
+- apiGroups: ["k0rdent.mirantis.com"]
+  resources: ["multiclusterservices"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 # Flux CD HelmRepository resources (for repository management)
 - apiGroups: ["source.toolkit.fluxcd.io"]
   resources: ["helmrepositories"]
