@@ -5,6 +5,31 @@ entries:
       category: Management
     apiVersion: v2
     appVersion: latest
+    created: "2025-07-16T09:08:26.706947044Z"
+    description: A Helm chart for Open K0rdent UI - Web interface for Mirantis k0rdent
+      cluster management
+    digest: 53f9eafc8c03a53b3a449847e0533dd25e2b8f6b4846f0d664102dfc94ddc91b
+    home: https://github.com/mirantis-field/open-k0rdent-ui
+    keywords:
+    - kubernetes
+    - cluster-management
+    - ui
+    - k0rdent
+    - mirantis
+    maintainers:
+    - email: field-team@mirantis.com
+      name: Mirantis Field Team
+    name: open-k0rdent-ui
+    sources:
+    - https://github.com/mirantis-field/open-k0rdent-ui
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/open-k0rdent-ui-0.1.5/open-k0rdent-ui-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      category: Management
+    apiVersion: v2
+    appVersion: latest
     created: "2025-07-11T14:10:22.622941046Z"
     description: A Helm chart for Open K0rdent UI - Web interface for Mirantis k0rdent
       cluster management
@@ -101,4 +126,22 @@ entries:
     urls:
     - https://github.com/mirantis-field/helm-charts/releases/download/open-k0rdent-ui-0.1.1/open-k0rdent-ui-0.1.1.tgz
     version: 0.1.1
-generated: "2025-07-11T14:10:22.622960653Z"
+  openstack-hosted-cp:
+  - annotations:
+      cluster.x-k8s.io/bootstrap-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/control-plane-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/infrastructure-openstack: v1beta1
+      cluster.x-k8s.io/provider: infrastructure-openstack, control-plane-k0sproject-k0smotron,
+        bootstrap-k0sproject-k0smotron
+    apiVersion: v2
+    appVersion: v1.32.6+k0s.0
+    created: "2025-07-16T09:08:26.889190073Z"
+    description: 'A KCM template to deploy a k8s cluster on Openstack with control
+      plane components within the management cluster. '
+    digest: 5505b4ec3b79307b34e397268cb314c3f654eb3ab1fc7bd5a0e92ad5ef56a55e
+    name: openstack-hosted-cp
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/openstack-hosted-cp-1.0.0/openstack-hosted-cp-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-07-16T09:08:26.889209519Z"
