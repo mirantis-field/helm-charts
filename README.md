@@ -42,6 +42,7 @@ Please refer to the [Quick Start guide](https://helm.sh/docs/intro/quickstart/) 
 | Chart | Description | Version |
 |-------|-------------|---------|
 | [open-k0rdent-ui](./charts/open-k0rdent-ui) | Web interface for Mirantis k0rdent cluster management | 0.1.0 |
+| [openstack-hosted-cp](./charts/openstack-hosted-cp) | KCM template to deploy k8s clusters on OpenStack with hosted control plane | 1.0.0 |
 
 ## Useful Helm Commands
 

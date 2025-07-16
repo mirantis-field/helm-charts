@@ -89,9 +89,9 @@ app:
 # Namespace configuration
 namespace:
   create: true
-  name: "k0rdent-ui"
+  name: "open-k0rdent-ui"
   labels:
-    name: "k0rdent-ui"
+    name: "open-k0rdent-ui"
 
 # RBAC configuration
 rbac:
