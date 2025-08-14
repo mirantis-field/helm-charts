@@ -18,6 +18,24 @@ entries:
     urls:
     - https://github.com/mirantis-field/helm-charts/releases/download/aws-custom-hosted-cp-1.0.12/aws-custom-hosted-cp-1.0.12.tgz
     version: 1.0.12
+  azure-custom-hosted-cp:
+  - annotations:
+      cluster.x-k8s.io/bootstrap-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/control-plane-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/infrastructure-azure: v1beta1
+      cluster.x-k8s.io/provider: infrastructure-azure, control-plane-k0sproject-k0smotron,
+        bootstrap-k0sproject-k0smotron
+    apiVersion: v2
+    appVersion: v1.32.6+k0s.0
+    created: "2025-08-14T09:38:17.927242157Z"
+    description: 'A KCM template to deploy a k8s cluster on Azure with control plane
+      components within the management cluster. '
+    digest: 09683396f25ba23952b381501d8ca34789b23cbb6f98d1f1dc9d7528e0499acf
+    name: azure-custom-hosted-cp
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/azure-custom-hosted-cp-1.0.14/azure-custom-hosted-cp-1.0.14.tgz
+    version: 1.0.14
   azure-hosted-cp:
   - annotations:
       cluster.x-k8s.io/bootstrap-k0sproject-k0smotron: v1beta1
@@ -180,4 +198,4 @@ entries:
     urls:
     - https://github.com/mirantis-field/helm-charts/releases/download/openstack-hosted-cp-1.0.0/openstack-hosted-cp-1.0.0.tgz
     version: 1.0.0
-generated: "2025-08-14T09:35:36.256446768Z"
+generated: "2025-08-14T09:38:17.927254329Z"
