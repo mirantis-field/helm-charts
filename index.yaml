@@ -1,5 +1,41 @@
 apiVersion: v1
 entries:
+  aws-custom-hosted-cp:
+  - annotations:
+      cluster.x-k8s.io/bootstrap-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/control-plane-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/infrastructure-aws: v1beta2
+      cluster.x-k8s.io/provider: infrastructure-aws, control-plane-k0sproject-k0smotron,
+        bootstrap-k0sproject-k0smotron
+    apiVersion: v2
+    appVersion: v1.32.6+k0s.0
+    created: "2025-08-14T09:35:36.06094433Z"
+    description: 'A KCM template to deploy a k8s cluster on AWS with control plane
+      components within the management cluster. '
+    digest: 73372a8cb6063e7363eef041819237104040a85f6728fa228f180d99759c1ca6
+    name: aws-custom-hosted-cp
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/aws-custom-hosted-cp-1.0.12/aws-custom-hosted-cp-1.0.12.tgz
+    version: 1.0.12
+  azure-hosted-cp:
+  - annotations:
+      cluster.x-k8s.io/bootstrap-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/control-plane-k0sproject-k0smotron: v1beta1
+      cluster.x-k8s.io/infrastructure-azure: v1beta1
+      cluster.x-k8s.io/provider: infrastructure-azure, control-plane-k0sproject-k0smotron,
+        bootstrap-k0sproject-k0smotron
+    apiVersion: v2
+    appVersion: v1.32.6+k0s.0
+    created: "2025-08-14T09:35:36.256421621Z"
+    description: 'A KCM template to deploy a k8s cluster on Azure with control plane
+      components within the management cluster. '
+    digest: 81cb94791e6764e22b47749986c0f1347edb5d613b0b92ce1f4e14f8882f85bb
+    name: azure-hosted-cp
+    type: application
+    urls:
+    - https://github.com/mirantis-field/helm-charts/releases/download/azure-hosted-cp-1.0.14/azure-hosted-cp-1.0.14.tgz
+    version: 1.0.14
   open-k0rdent-ui:
   - annotations:
       category: Management
@@ -144,4 +180,4 @@ entries:
     urls:
     - https://github.com/mirantis-field/helm-charts/releases/download/openstack-hosted-cp-1.0.0/openstack-hosted-cp-1.0.0.tgz
     version: 1.0.0
-generated: "2025-07-16T09:08:26.889209519Z"
+generated: "2025-08-14T09:35:36.256446768Z"
