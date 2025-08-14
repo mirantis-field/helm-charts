@@ -1,5 +1,5 @@
 apiVersion: v2
-name: azure-hosted-cp
+name: azure-custom-hosted-cp
 description: |
   A KCM template to deploy a k8s cluster on Azure with control plane components
   within the management cluster.
