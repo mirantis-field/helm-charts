@@ -18,6 +18,6 @@ spec:
     kind: K0smotronControlPlane
     name: {{ include "k0smotroncontrolplane.name" .  }}
   infrastructureRef:
-    apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
-    kind: OpenStackCluster
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+    kind: AWSCluster
     name: {{ include "cluster.name" . }}

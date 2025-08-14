@@ -9,7 +9,7 @@ spec:
       {{- if $global.k0sURL }}
       downloadURL: "{{ $global.k0sURL }}/k0s-{{ .Values.k0s.version }}-{{ .Values.k0s.arch }}"
       {{- end }}
-      {{- if or $global.registryCertSecret $global.k0sURLCertSecret .Values.identityRef.caCert.secretName }}
+      {{- if or $global.registryCertSecret $global.k0sURLCertSecret }}
       {{- $certs := dict "registry.crt" $global.registryCertSecret "k0s-url.crt" $global.k0sURLCertSecret }}
       files:
         {{- range $path, $secret := $certs }}
@@ -22,14 +22,6 @@ spec:
           path: /usr/local/share/ca-certificates/{{ $path }}
         {{- end }}
         {{- end }}
-        {{- if and $.Values.identityRef.caCert $.Values.identityRef.caCert.secretName }}
-        - contentFrom:
-            secretRef:
-              name: {{ $.Values.identityRef.caCert.secretName }}
-              key: ca.crt
-          permissions: "0664"
-          path: {{ $.Values.identityRef.caCert.path }}/ca.crt
-        {{- end }}
       preStartCommands:
       - "sudo update-ca-certificates"
       {{- end }}
@@ -37,7 +29,6 @@ spec:
       args:
       - --enable-cloud-provider
       - --kubelet-extra-args="--cloud-provider=external"
-      - --debug=true
       {{- range $arg := .Values.k0s.workerArgs }}
       - {{ toYaml $arg }}
       {{- end }}

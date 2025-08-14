@@ -2,8 +2,8 @@
     {{- .Release.Name | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{- define "openstackmachinetemplate.name" -}}
-    {{- include "cluster.name" . }}-mt-{{ .Values.image | toString | sha256sum | trunc 8 }}
+{{- define "azuremachinetemplate.name" -}}
+    {{- include "cluster.name" . }}-mt
 {{- end }}
 
 {{- define "k0smotroncontrolplane.name" -}}
