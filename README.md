@@ -20,11 +20,7 @@ helm search repo mirantis-field
 Install a chart:
 
 ```bash
-helm install my-release mirantis-field/open-k0rdent-ui
+helm install my-release mirantis-field/aws-custom-hosted-cp
 ```
-
-## Available Charts
-
-- **open-k0rdent-ui**: Web interface for Mirantis k0rdent cluster management
 
 For more information about individual charts, visit the [source repository](https://github.com/mirantis-field/helm-charts).
