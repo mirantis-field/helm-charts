@@ -1,0 +1,9 @@
+configSecret:
+  create: false
+  name: ""
+  namespace: ""
+
+config: {}
+
+manager: {}
+imagePullSecrets: []
